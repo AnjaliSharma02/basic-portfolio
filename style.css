@@ -1,0 +1,316 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body,
+html{
+    font-family:"poppins",sans-serif;
+    font-weight: 300;
+    line-height: 1.4;
+    scroll-behavior: smooth;
+    color: white;
+}
+
+body{
+    font-size: 1.4rem;
+}
+
+.container{
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+#project h2{
+    margin-bottom: 50px;
+}
+
+header{
+    background: rgba(5, 98, 148, 0.941);
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+nav ul{
+    display: flex;
+    gap: 1rem;
+}
+
+nav li{
+    font-size: 1.8rem;
+    border-bottom: 0.4rem transparent solid;
+    transition: 0.3s ease-in-out;
+}
+
+nav li:hover{
+    border-bottom: 0.3rem rgb(203, 203, 98) solid ;
+    transition: 0.3s ease-in-out;
+}
+
+.logo{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.hero-img img{
+    width: 300px;
+    height: 350px;
+    border-radius: 300px;
+}
+
+#hero {
+    background: rgb(25, 46, 78);
+    padding:4rem 0 ;
+    border-bottom: 4px rgba(5, 98, 148, 0.941) solid ;
+}
+
+#hero .container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.hero-content{
+    display: grid;
+    place-items: center;
+}
+
+#hero h1{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.hi-text{
+    font-size: 6rem;
+    color: yellow;
+    font-weight: bold;
+}
+
+.name-text{
+    font-size: 5rem;
+}
+
+#hero h2{
+    font-size: 4rem;
+    font-weight: bold;
+    /* animation */
+
+    overflow: hidden;  /*ensure the content is not revealed until the animation*/
+    border-right: 0.15em solid orange; /* the typewrite cursor */
+    white-space: nowrap; /* keeps the content on a single line */
+    margin: 0 auto; /* gives that scrolling affects as the typing happens*/ 
+    animation: typing 5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing{
+    from {
+        width: 0;
+    }
+    to {
+        width: 80%;
+    }
+}
+
+@keyframes blink-caret{
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+        border-color: orange;
+    }
+}
+
+/* project section */
+
+#project{
+    background: #243e66;
+}
+
+.card img{
+    width: 350px;
+    height:250px ;
+}
+
+#project h2{
+    font-size: 6rem;
+    text-align: center;
+    padding: 2rem 0 ;
+}
+
+.project-container{
+    display: grid;
+    grid-template-columns:repeat(auto-fit, minmax(330px, 1fr));  
+    gap: 3rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+.grid-item{
+    display: grid;
+    place-items: center;
+    margin-bottom: 60px;
+}
+
+.grid-item h3{
+   color: #000;
+}
+
+.card{
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: 0.2s ease-in-out;
+    
+}
+
+.card:hover{
+    transform: scale(1.05);
+    transition: 1s ease-in-out;
+}
+
+.card:hover img{
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+    opacity: 0.8;
+}
+
+.card:hover .card-content{
+    background: white;
+    color: black;
+    transform: translateY(0px);
+}
+
+.card-content{
+    padding: 2rem;
+    position: relative;
+    top: -6.5rem;
+    margin-bottom: -6.5rem;
+    transition: 0.5s ease-in-out;
+    transform: translateY(100px);
+}
+
+.card-content h3 {
+    text-align: center;
+}
+
+/* contact section */
+#contact{
+    background: rgb(39, 53, 89);
+}
+
+#contact h2{
+    font-size: 6rem;
+    text-align: center;
+    margin: 2rem 0 ;
+}
+
+#contact .container{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    justify-content:center ;
+}
+
+.top-contact{
+    display: grid;
+    margin: 0 auto;
+    max-width: 800px;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+}
+
+.contact-way{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.contact-way i{
+    font-size: 3rem;
+}
+
+.contact-way h3{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.bottom-content{
+    display: grid;
+    margin: 0 auto;
+    max-width: 400px;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 1rem;
+}
+
+/* footer */
+
+footer{
+    background: #1f0d48;
+    padding: 2rem;
+    color: white;
+    font: size 1.6rem;
+    text-align: center;
+}
+
+/* resposive */
+
+@media (max-width:786px){
+    html{
+        font-size: 40%;
+    }
+
+    #hero .container{
+        flex-direction: column;
+    }
+
+    .hero-img{
+        display: grid;
+        place-items: center;
+    }
+
+    
+    #contact .container{
+        height: 70vh;
+    } 
+}
+
+@media (max-width:500px){
+    html{
+        font-size: 32%;
+    }
+    #hero .container{
+        flex-direction: column;
+    }
+
+    .hero-img{
+        display: grid;
+        place-items: center;
+    }
+
+    #contact .container{
+        height: 50vh;
+    } 
+}
+
